@@ -1,0 +1,315 @@
+@import "main";
+.styleGradient {
+  top: 0;
+  left: 0;
+  height: 101.5%;
+  width: 100%;
+  // max-height: 736px;
+  position: absolute;
+  background: linear-gradient(#fdfbfb00, #f2f3f3);
+  z-index: 1;
+}
+.detail-header {
+  // color: white;
+  position: relative;
+  @include for-size(md) {
+    margin-top: 76px;
+  }
+  .img-header {
+    width: 100%;
+    @include for-size(sm) {
+      display: none;
+    }
+  }
+  .img-header-sm {
+    @include for-size(sm) {
+      height: 350px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // filter: blur(1px);
+      position: relative;
+    }
+    @include for-size(xs) {
+      height: 300px;
+    }
+    .play-icon,
+    .header-title {
+      position: absolute;
+      z-index: 10;
+    }
+    .play-icon {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .header-title {
+      bottom: 10px;
+      left: 30px;
+      p {
+        font-size: $font-size3;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      .detail-header__title {
+        p {
+          font-size: $font-size5;
+          font-weight: 500;
+          color:$color-fontL;
+          @include for-size(phone-sm){
+            font-size: $font-size4;
+          }
+        }
+        .Cyber {
+          font-size: $font-size2;
+          background-color: $color-but-lo;
+          border-radius: 4px;
+          padding: $pad-mar1 8px;
+          text-align: center;
+          display: inline-block;
+          margin-right: 8px;
+          align-self: center;
+          color: $color-font-but-lo;
+        }
+      }
+    }
+  }
+  .detail-header__content {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: $width-lg;
+    width: 100%;
+    transition: all 0.5;
+    @include for-size(lg) {
+      top: 60%;
+      width: 80%;
+    }
+    @include for-size(md) {
+      top: 50%;
+    }
+    .detail-header-info {
+      display: flex;
+      .header-detail-img {
+        position: relative;
+        overflow: hidden;
+        @include for-size(md) {
+          overflow: initial;
+        }
+        .img-phim img {
+          width: 214px;
+          height: 316px;
+          @include for-size(ll) {
+            width: 180px;
+            height: 250px;
+          }
+        }
+        .img-border,
+        .img-hover,
+        .play-icon {
+          position: absolute;
+          @include for-size(md) {
+            top: 0;
+            left: 0;
+          }
+        }
+        .img-border,
+        .img-hover {
+          img {
+            @include for-size(ll) {
+              width: 180px;
+              height: 250px;
+            }
+          }
+        }
+        .play-icon {
+          cursor: pointer;
+          opacity: 0;
+          top: 50%;
+          left: 50%;
+          transition: all 1s;
+          transform: translate(-50%, -50%);
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          @include for-size(sm) {
+            opacity: 1;
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+        &:hover .play-icon {
+          opacity: 1;
+        }
+        .img-hover {
+          bottom: -100%;
+          left: -100%;
+          transition: all 0.2s;
+          @include for-size(md){
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+          }
+        }
+        &:hover .img-hover {
+          bottom: 0%;
+          left: 0;
+          opacity: 1;
+        }
+        .img-border {
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+    .header-title {
+      margin-left: $pad-mar4;
+      align-self: center;
+
+      p {
+        font-size: $font-size2;
+        color:$color-fontL-o8;
+        font-weight: 550;
+      }
+      .detail-header__title {
+        font-weight: bold;
+        font-family: "SF Medium";
+        color: $color-fontL;
+        // color: #000;
+        .Cyber {
+          font-size: $font-size2;
+          background-color: $color-but-lo;
+          border-radius: 4px;
+          padding: $pad-mar1 8px;
+          color: $color-font-but-lo;
+          text-align: center;
+          display: inline-block;
+          margin-right: 8px;
+          align-self: center;
+        }
+        p {
+          font-size: $font-size3;
+        }
+      }
+      .header-title__button a {
+        background-color: $color-but-lo;
+        padding: $pad-mar1 $pad-mar4;       
+        font-size: $font-size3;
+          color: $color-font-but-lo;
+      }
+    }
+    .header-circleStar {
+      @include for-size(md) {
+        width: 200px;
+      }
+      @include for-size(sm) {
+        display: none;
+      }
+      align-self: center;
+      .circlePercent {
+        position: relative;
+        font-size: 60px;
+        color: white;
+        .circle-danhGia {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .circleStar-star {
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+.detail-footer {
+  padding:50px 0;
+  max-width: $width-ll;
+  @include for-size(lg) {
+    max-width: $width-lg;
+  }
+  @include for-size(md) {
+    max-width: 100%;
+  }
+  @include for-size(sm) {
+    padding: $pad-mar2 0; 
+  }
+  .detai-footer-title {
+    padding:0 50px;
+    h3 {
+      color: $color-headingL;
+      padding: 0 $pad-mar5;
+      transition: all 0.5s;
+      font-size: $font-size4;
+      font-weight: 400;
+      &:hover {
+        color: $color-headingA;
+        font-size: $font-size5;
+        @include for-size(xs) {
+          font-size: $font-size3;
+        }
+      }
+      @include for-size(xs) {
+        font-size: $font-size2;
+        padding: 0 $pad-mar4;
+      }
+    }
+    h3.active {
+      font-weight: 550;
+      color: $color-headingA;
+      font-size: $font-size5;
+      pointer-events: none;
+      @include for-size(xs) {
+        font-size: $font-size3;
+      }
+      @include for-size(iphone) {
+        font-size: $font-size3;
+      }
+    }
+    @include for-size(sm) {
+      padding: $pad-mar4 $pad-mar4;
+    }
+    @include for-size(xs) {
+      padding: $pad-mar4 $pad-mar4;
+    }
+    @include for-size(phone-sm) {
+      padding: $pad-mar4 0;
+    }
+  }
+}
+.dark-detail {
+  .styleGradient {
+    // background: linear-gradient(#0000, #000);
+    // background: linear-gradient(#0000, #000);
+    background: linear-gradient(#fdfbfb00, #1e2935);
+  }
+  .detail-header {
+    .header-title {
+      p {
+        color: $color-fontD-o8;
+      }
+      .detail-header__title {
+        p {
+          color:$color-fontD;
+        }
+      }
+    }
+  }
+
+  .detai-footer-title {
+    h3 {
+      color: $color-fontD-o6;
+      &:hover {
+        color: $color-headingA;
+      }
+    }
+  }
+}
